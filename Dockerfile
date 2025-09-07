@@ -16,10 +16,10 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 WORKDIR /var/www/html
 
 # Ensure Laravel can write to storage and cache
-RUN mkdir -p /var/www/html/storage/framework/{cache,sessions,views} \
-    && mkdir -p /var/www/html/storage/logs \
-    && chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache \
-    && chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
+#RUN mkdir -p /var/www/html/storage/framework/{cache,sessions,views} \
+#    && mkdir -p /var/www/html/storage/logs \
+#    && chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache \
+#    && chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
 
 # Set Apache DocumentRoot to /public
 RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available/000-default.conf \
