@@ -22,7 +22,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Push Docker Image
-        run: docker push {{ secrets.DOCKER_USERNAME }}/my-laravel-app:${{ github.sha }}
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/my-laravel-app:${{ github.sha }}
 
 #      - name: Deploy to Production Server
 #        uses: appleboy/ssh-action@master
